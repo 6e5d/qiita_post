@@ -1,11 +1,11 @@
 import requests, json
-from qiita_post import token
+from . import load_token
 
 # stage1: qiita.comと通信
 def stage1(filename, size):
 	headers = {
 		"Content-Type": "application/json",
-		"Authorization": f"Bearer {token}",
+		"Authorization": f"Bearer {load_token()}",
 	}
 	data = {"image": {
 		"content_type": "image/png",
